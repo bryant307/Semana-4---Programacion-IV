@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad Semana 4</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+    <h1>Acerca de Mí</h1>
+    </div>
+    <div class="grid-container">
+        <div class="grid-item" id="hobby">Hobby favorito</div>
+        <div class="grid-item" id="comida">Comida favorita</div>
+        <div class="grid-item" id="pelicula">Película o serie favorita</div>
+        <div class="grid-item" id="color">Color favorito</div>
+        <div class="grid-item" id="artista">Artista o deportista favorito Haz click derecho</div>
+        <div class="grid-item" id="pais">País que me gustaría visitar</div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("hobby").addEventListener("click", () => {
+                alert("Mi hobby favorito es programar!");
+            });
+
+            document.getElementById("comida").addEventListener("mouseover", () => {
+                document.body.style.backgroundColor = "#ee875d";
+            });
+
+            document.getElementById("comida").addEventListener("mouseout", () => {
+                document.body.style.backgroundColor = "";
+            });
+
+            document.getElementById("pelicula").addEventListener("dblclick", () => {
+                document.getElementById("pelicula").textContent = "Supernatural";
+            });
+
+            document.getElementById("color").addEventListener("click", () => {
+                document.getElementById("color").style.color = "red";
+                alert("Mi color favorito es el rojo").style.color = "red    "
+            });
+
+            document.getElementById("color").addEventListener("mouseleave", () => {
+                document.getElementById("color").style.color = "black";
+            });
+
+            document.getElementById("artista").addEventListener("contextmenu", (event) => {
+                event.preventDefault();
+                alert("Mi artista favorito es Don Omar!");
+            });
+
+            document.getElementById("pais").addEventListener("click", () => {
+                let img = document.createElement("img");
+                img.src = "img/pais.jpg";
+                img.alt = "Pais que quiero visitar";
+                img.style.width = "100px";
+                img.style.height = "100px";
+            });
+
+            document.getElementById("pais").addEventListener("mouseleave", () => {
+                let images = document.getElementById("pais").getElementsByTagName("img");
+                if (images.length > 0) {
+                    images[0].remove();
+                }
+            });
+        });
+    </script>
+
+    <footer class="footer">
+        <p>Bryan Enrique Torres Alvarez - SMSS002520</p>
+        <p>Ingenieria en Sistemas y Redes Informaticas</p>
+    </footer>
+</body>
+</html>
