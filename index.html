@@ -25,24 +25,29 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("hobby").addEventListener("click", () => {
-                alert("Mi hobby favorito es programar!");
+                alert("Mi hobby favorito es aprender programacion y el motociclismo!");
             });
 
             document.getElementById("comida").addEventListener("mouseover", () => {
-                document.body.style.backgroundColor = "#ee875d";
+                document.body.style.backgroundColor = "#05b3e6";
+                document.getElementById("comida").textContent = "Las pupusas de Arroz"
             });
 
             document.getElementById("comida").addEventListener("mouseout", () => {
                 document.body.style.backgroundColor = "";
+                document.getElementById("comida").textContent = "Comida Favorita"
             });
 
-            document.getElementById("pelicula").addEventListener("dblclick", () => {
+            document.getElementById("pelicula").addEventListener("click", () => {
                 document.getElementById("pelicula").textContent = "Supernatural";
+                window.open("https://es.wikipedia.org/wiki/Supernatural_(serie_de_televisi%C3%B3n)")
             });
 
             document.getElementById("color").addEventListener("click", () => {
+                document.body.style.backgroundColor = "#e60505";
                 document.getElementById("color").style.color = "red";
-                alert("Mi color favorito es el rojo").style.color = "red    "
+                alert("Mi color favorito es el rojo")
+                
             });
 
             document.getElementById("color").addEventListener("mouseleave", () => {
@@ -52,25 +57,32 @@
             document.getElementById("artista").addEventListener("contextmenu", (event) => {
                 event.preventDefault();
                 alert("Mi artista favorito es Don Omar!");
+                event.preventDefault(); // Evita el menú contextual
+
+                let contenedor = document.getElementById("artista");
+                if (!document.getElementById("videodeYouTube")) {
+                    let iframe = document.createElement("iframe");
+                    iframe.id = "videoYouTube";
+                    iframe.width = "300";
+                    iframe.height = "200";
+                    iframe.src = "https://www.youtube.com/embed/JR9UC9l2WW4"; // Reemplaza VIDEO_ID con el código del video
+                    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                    iframe.allowFullscreen = true;
+
+                    contenedor.appendChild(iframe);
+                }
             });
 
             document.getElementById("pais").addEventListener("click", () => {
                 let img = document.createElement("img");
                 img.src = "img/pais.jpg";
-                img.alt = "Pais que quiero visitar";
-                img.style.width = "100px";
-                img.style.height = "100px";
-            });
-
-            document.getElementById("pais").addEventListener("mouseleave", () => {
-                let images = document.getElementById("pais").getElementsByTagName("img");
-                if (images.length > 0) {
-                    images[0].remove();
-                }
+                img.alt = "País favorito";
+                img.style.width = "200px";
+                img.style.height = "200px";
+                document.getElementById("pais").appendChild(img);
             });
         });
     </script>
-
     <footer class="footer">
         <p>Bryan Enrique Torres Alvarez - SMSS002520</p>
         <p>Ingenieria en Sistemas y Redes Informaticas</p>

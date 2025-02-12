@@ -1,0 +1,12 @@
+Eventos en el proyecto:
+1-Al dar click en Hobits sale un alert
+2-Al pasar el mouse en mi comida favorita menciona la comida favorita y al quitar mouse se quitar
+3-Al dar click en mi serie favorita menciona la serie en especifico
+4-Al seleccionar el color favorito sale un alert y cambia el color de la pagina
+5-Al seleccionar el artista con el click derecho sale un alert con el artista favoerito
+6-Al dar click en el pais que quiero visitar sale una imagen.
+
+
+
+
+
